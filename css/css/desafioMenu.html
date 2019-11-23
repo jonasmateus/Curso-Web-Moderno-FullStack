@@ -7,7 +7,120 @@
     <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <style>
-        /* ... */
+
+        html {
+            height: 100%;
+        }
+
+        body {
+            font-family: 'Oswald';
+            font-size: 20px;
+            margin: 0;
+            height: 100%;
+        }
+
+        .cabecalho{
+            position: relative;
+            background-color: rgb(49, 47, 47);
+            color: white;
+            border-bottom: 3px solid cornflowerblue;
+            
+            
+        }
+
+        .cabecalho > img {
+    
+            height: 100%;
+            
+        }
+
+        div, button, nav, aside {
+            position: relative;
+            display: inline-block;
+            vertical-align: middle;
+            
+        }
+
+         ul  {
+            margin: 0;
+            padding: 0 20px;
+            display: inline-block;
+            
+        }
+
+        li {
+            box-sizing: border-box;
+            display: inline-block;
+            margin: 10px;
+            
+            
+        }
+       
+
+        li > a, .autenticacao a {
+            text-decoration: none;
+            color: white;
+            border-radius: 3px;
+        }
+        .autenticacao a {
+            margin-right: 5px;
+        }
+
+        .menu-toogle, button {
+              float: inline-end; 
+            
+        }
+
+        .autenticacao  {
+            margin: 0px 0px 0px 300px;
+            padding: 10px;
+        }
+
+        .autenticacao a{
+            padding: 0px;
+        }
+
+        li a:hover, aside  a:hover{
+            
+            background-color: cornflowerblue;
+            text-decoration: none;
+            color: black;
+            border-radius: 3px;
+            
+        }
+        
+        button {
+            background-color: white;
+            top: 30px;
+            padding: 10px;
+            margin-right: 10px;
+            border-radius: 8px;
+            border: solid gray;
+        }
+
+        button:hover {
+            top: 30px;
+            padding: 10px;
+            margin-right: 10px;
+            border-radius: 5px;
+            border: solid  cornflowerblue;  
+        }
+
+        button {
+            display: none;
+        }
+
+        @media (max-width: 1360px) {
+           
+           .autenticacao{
+                display:none;
+           }
+
+           button {
+               display: initial;
+           }
+           
+        }
     </style>
 </head>
 
