@@ -1,143 +1,143 @@
-<!DOCTYPE html>
-<html>
+    <!DOCTYPE html>
+    <html>
 
-<head>
-    <meta charset="UTF-8">
-    <title>Desafio Menu</title>
-    <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-    <style>
-        /* Resolvendo o problema através do CSS */
-        html {
-            height: 100%;
-        }
+    <head>
+        <meta charset="UTF-8">
+        <title>Desafio Menu</title>
+        <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+        <style>
+            /* Resolvendo o problema através do CSS */
+            html {
+                height: 100%;
+            }
 
-        body {
-            font-family: 'Oswald';
-            font-size: 20px;
-            margin: 0;
-            height: 100%;
-        }
+            body {
+                font-family: 'Oswald';
+                font-size: 20px;
+                margin: 0;
+                height: 100%;
+            }
 
-        .cabecalho{
-            position: relative;
-            background-color: rgb(49, 47, 47);
-            color: white;
-            border-bottom: 3px solid cornflowerblue;
-        }
+            .cabecalho{
+                position: relative;
+                background-color: rgb(49, 47, 47);
+                color: white;
+                border-bottom: 3px solid cornflowerblue;
+            }
 
-        .cabecalho > img {  height: 100%; }
+            .cabecalho > img {  height: 100%; }
 
-        div, button, nav, aside {
-            position: relative;
-            display: inline-block;
-            vertical-align: middle;
-        }
+            div, button, nav, aside {
+                position: relative;
+                display: inline-block;
+                vertical-align: middle;
+            }
 
-         ul  {
-            margin: 0;
-            padding: 0 20px;
-            display: inline-block;   
-        }
+            ul  {
+                margin: 0;
+                padding: 0 20px;
+                display: inline-block;   
+            }
 
-        li {
-            box-sizing: border-box;
-            display: inline-block;
-            margin: 10px;
-        }
-       
-        li > a, .autenticacao a {
-            text-decoration: none;
-            color: white;
-            border-radius: 3px;
-        }
-
-        .autenticacao a {margin-right: 5px; }
-
-        .menu-toogle, button { float: inline-end;  }
-
-        .autenticacao  {
-            margin: 0px 0px 0px 300px;
-            padding: 10px;
-        }
-
-        .autenticacao a{ padding: 0px; }
-
-        li a:hover, aside  a:hover{
-            background-color: cornflowerblue;
-            text-decoration: none;
-            color: black;
-            border-radius: 3px;
-        }
+            li {
+                box-sizing: border-box;
+                display: inline-block;
+                margin: 10px;
+            }
         
-        button {
-            background-color: white;
-            top: 30px;
-            padding: 10px;
-            margin-right: 10px;
-            border-radius: 8px;
-            border: solid gray;
-        }
+            li > a, .autenticacao a {
+                text-decoration: none;
+                color: white;
+                border-radius: 3px;
+            }
 
-        button:hover {
-            top: 30px;
-            padding: 10px;
-            margin-right: 10px;
-            border-radius: 5px;
-            border: solid  cornflowerblue;  
-        }
+            .autenticacao a {margin-right: 5px; }
 
-        button { display: none; }
+            .menu-toogle, button { float: inline-end;  }
 
-        @media (max-width: 1360px) {  
+            .autenticacao  {
+                margin: 0px 0px 0px 300px;
+                padding: 10px;
+            }
 
-           .autenticacao {
-                display:none;
-           }
+            .autenticacao a{ padding: 0px; }
 
-           button {
-               display: initial;
-           }
-           
-        }
-    </style>
-</head>
+            li a:hover, aside  a:hover{
+                background-color: cornflowerblue;
+                text-decoration: none;
+                color: black;
+                border-radius: 3px;
+            }
+            
+            button {
+                background-color: white;
+                top: 30px;
+                padding: 10px;
+                margin-right: 10px;
+                border-radius: 8px;
+                border: solid gray;
+            }
 
-<body>
-    <header class="cabecalho">
-        <div class="logo">
-            <a href="#inicio">
-                <img src="http://files.cod3r.com.br/curso-web/logo.png" alt="Logo" />
-            </a>
-        </div>
-        <button class="menu-toggle">
-            <i class="fa fa-lg fa-bars"></i>
-        </button>
-        <nav class="menu">
-            <ul>
-                <li>
-                    <a href="#inicio">Início</a>
-                </li>
-                <li>
-                    <a href="#cursos">Cursos</a>
-                </li>
-                <li>
-                    <a href="#sobre">Sobre</a>
-                </li>
-                <li>
-                    <a href="#contato">Contato</a>
-                </li>
-            </ul>
-        </nav>
-        <aside class="autenticacao">
-            <a href="#login">Login</a>
-            <a href="#registar" class="botao destaque">Registrar</a>
-        </aside>
-    </header>
+            button:hover {
+                top: 30px;
+                padding: 10px;
+                margin-right: 10px;
+                border-radius: 5px;
+                border: solid  cornflowerblue;  
+            }
 
-    <script>
-        // ...
-    </script>
-</body>
+            button { display: none; }
 
-</html>
+            @media (max-width: 1360px) {  
+
+            .autenticacao {
+                    display:none;
+            }
+
+            button {
+                display: initial;
+            }
+            
+            }
+        </style>
+    </head>
+
+    <body>
+        <header class="cabecalho">
+            <div class="logo">
+                <a href="#inicio">
+                    <img src="http://files.cod3r.com.br/curso-web/logo.png" alt="Logo" />
+                </a>
+            </div>
+            <button class="menu-toggle">
+                <i class="fa fa-lg fa-bars"></i>
+            </button>
+            <nav class="menu">
+                <ul>
+                    <li>
+                        <a href="#inicio">Início</a>
+                    </li>
+                    <li>
+                        <a href="#cursos">Cursos</a>
+                    </li>
+                    <li>
+                        <a href="#sobre">Sobre</a>
+                    </li>
+                    <li>
+                        <a href="#contato">Contato</a>
+                    </li>
+                </ul>
+            </nav>
+            <aside class="autenticacao">
+                <a href="#login">Login</a>
+                <a href="#registar" class="botao destaque">Registrar</a>
+            </aside>
+        </header>
+
+        <script>
+            // ...
+        </script>
+    </body>
+
+    </html>
