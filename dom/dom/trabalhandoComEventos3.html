@@ -47,16 +47,19 @@
         <script>
             const item = document.querySelectorAll("[wm-dropzone] .item")
             item.forEach((item, indice) => {
+
                 item.draggable = true
                 item.id ? item.id = item.id : item.id = `draggable-id-${indice}`
 
-
                 const dropzones = document.querySelectorAll("[wm-dropzone]")
+
                 dropzones.forEach(dropzone => {
+
                     dropzone.ondragover = evento => evento.preventDefault()
                     
                     dropzone.ondrop = function (evento) {
                     console.log(evento.dataTransfer.mozSourceNode)
+                    
                     const id = evento.dataTransfer.mozSourceNode.id
                     const item = document.getElementById(id)
                     evento.target.appendChild(item)
