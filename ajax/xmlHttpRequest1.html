@@ -35,7 +35,7 @@
             metodo: "GET",
             url: "/dados/estados.json",
             sucesso (resposta) { 
-                
+
                 const estados = JSON.parse(resposta)
                 const linhas = estados.map(estado => {
                     const tr = document.createElement("tr")

@@ -7,8 +7,12 @@ app.use((req, resp, prox) => {
 })
 
 app.get("/", (req, resp) => {
-   resp.send("Deu certo...")
-   console.log("No console do node")
+   
+   resp.send( {
+    nome: "Fulano",
+    idade: 34
+})
+   console.log(obj)
 })
 
-app.listen(8080, () => console.log("App rodando na porta 8080..."))
+app.listen(3000, () => console.log("App rodando na porta 3000..."))
