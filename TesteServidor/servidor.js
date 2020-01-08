@@ -6,12 +6,15 @@ app.use((req, resp, prox) => {
     prox()
 })
 
-app.get("/", (req, resp) => {
-   
-   resp.send( {
+app.get("/algumarota", (req, resp) => {
+
+   const obj = {
     nome: "Fulano",
     idade: 34
-})
+   }
+   
+   resp.send(req.url)
+
    console.log(obj)
 })
 

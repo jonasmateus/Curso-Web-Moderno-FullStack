@@ -7,27 +7,29 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <button>requisitar</button>
 </body>
 <script>
 /* new  XMLHttpRequest() só funciona no contexto do navegador!!*/ 
-function requisitar (metodo, url) {
+function requisitar () {
 
 const xhr = new XMLHttpRequest()
 
 xhr.onreadystatechange = function () {
 
-    if (xhr.readyState == 4 &&  xhr.status != 200) console.log("depois porque a requisição é assíncrona")
+    if (xhr.readyState == 4 &&  xhr.status == 200) console.log("depois porque a requisição é assíncrona")
 }
 
-xhr.open(metodo, url, true)
+xhr.open("GET", "http://localhost:3000", true)
 xhr.send()
 
 console.log("Antes")
 
 }
 
-requisitar("GET", "http://cod3r.com.br/curso-web")
+const botao = document.querySelector("button")
+
+botao.onclick = requisitar()
 
 
 </script>

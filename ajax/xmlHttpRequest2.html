@@ -26,6 +26,7 @@
             const xhr = new XMLHttpRequest()
 
             if (xhr.upload) {
+                
                 xhr.upload.onprogress = function (evento) {
                     const atual = evento.loaded
                     const total = evento.total
@@ -46,6 +47,7 @@
         ajaxUpload({
             url: "carregamento",
             metodo: "post",
+            formData,
             
             progresso (dados)  {
                 const progresso = document.querySelector(".progresso")

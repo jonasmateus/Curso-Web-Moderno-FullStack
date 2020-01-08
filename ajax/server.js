@@ -16,7 +16,7 @@ const storage = multer.diskStorage({
     }
 })
 
-const upload = multer( { storage } ).single("/arquivoCarregado")
+const upload = multer( { storage } ).single("arquivoCarregado")
 
 app.post("/carregamento", (req, resp) => {
 
@@ -30,6 +30,6 @@ app.post("/carregamento", (req, resp) => {
     })
 })
 
-app.get("/teste", (req, resp) => resp.send("Ok"))
-app.listen(8080, () => console.log("O servidor está rodando..."))
+app.get("/teste", (req, resp) => resp.send("ok"))
+app.listen(8080, () => console.log("O servidor está rodando na porta 8080..."))
 
