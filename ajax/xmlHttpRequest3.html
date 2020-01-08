@@ -28,29 +28,16 @@
         }
 
         let config = {
-            url: "http://localhost:8080/dados/estados.json",
+            url: "dados/estados.json",
             metodo: "GET",
 
             sucesso (resposta) {
                 
                 const estados = Array.from(JSON.parse(resposta))
                 
-                function criarTabela(estados) {
+                const itens = estados.reduce((html, estado) => html + `<li>${estado.nome}</li>`, "")
 
-                    const ul = document.createElement("ul")
-                    let li = estados.map(estado => document.createElement("li"))
-
-                    for (let i = 0; i < estados.length; i++){
-                        li[i].innerHTML = estados[i].nome
-                    }
-
-                    li.forEach(i => ul.append(i))
-                
-                    document.querySelector("h1").append(ul)
-                
-                }
-
-                 criarTabela(estados)
+                 document.body.insertAdjacentHTML("beforeend", `<ul>${itens}</ul>`)
 
             },
 
