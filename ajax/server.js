@@ -30,6 +30,11 @@ app.post("/carregamento", (req, resp) => {
     })
 })
 
+app.post("/formulario", (req, resp) => {
+    resp.send(req.body)
+    console.log(req.body)
+})
+
 app.get("/teste", (req, resp) => resp.send("ok"))
-app.listen(8080, () => console.log("O servidor está rodando na porta 8080..."))
+app.listen(3000, () => console.log("O servidor está rodando na porta 3000..."))
 

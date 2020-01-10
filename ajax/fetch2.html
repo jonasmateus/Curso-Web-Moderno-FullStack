@@ -29,6 +29,27 @@
     </form>
     <div id="resultado"></div>
     <script>
-        // ...
+        document.usuarioForm.onsubmit = async e => {
+            e.preventDefault()
+
+            const resultado = e.target
+            console.log(resultado.action)
+            const data = new FormData(resultado)
+            console.log()
+            
+            
+            
+
+            const config = {
+                method: resultado.method,
+                body: new URLSearchParams(data)
+            }
+
+            
+            fetch(resultado.action, config).then(resp => resp.json())
+            .then(js => {
+                const result = document.getElementById("resultado").innerHTML = JSON.stringify(js)
+            })
+        }
     </script>
 </body>
