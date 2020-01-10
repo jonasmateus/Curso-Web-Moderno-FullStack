@@ -35,6 +35,14 @@ app.post("/formulario", (req, resp) => {
     console.log(req.body)
 })
 
+app.post
+
+app.get("/parOuImpar/2", (req, resp) => {
+    const par = parseInt(req.query.numero) % 2 === 0
+    console.log(req.url)
+    resp.send( par ? "par" : "ímpar" )
+})
+
 app.get("/teste", (req, resp) => resp.send("ok"))
 app.listen(3000, () => console.log("O servidor está rodando na porta 3000..."))
 
