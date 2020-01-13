@@ -31,16 +31,23 @@ app.post("/carregamento", (req, resp) => {
 })
 
 app.post("/formulario", (req, resp) => {
-    resp.send(req.body)
-    console.log(req.body)
+    const conteudo = {
+        ...req.body,
+        id: 3
+    }
+    resp.send(conteudo)
+    console.log(conteudo)
 })
 
 app.post
 
-app.get("/parOuImpar/2", (req, resp) => {
+app.get("/parOuImpar", (req, resp) => {
+
     const par = parseInt(req.query.numero) % 2 === 0
-    console.log(req.url)
-    resp.send( par ? "par" : "ímpar" )
+    console.log(req.query.numero)
+    resp.send({
+        resultado: par ? "par" : "ímpar"
+    })
 })
 
 app.get("/teste", (req, resp) => resp.send("ok"))

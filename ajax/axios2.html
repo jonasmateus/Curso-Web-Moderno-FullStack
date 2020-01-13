@@ -15,7 +15,7 @@
 
     <script>
         function mostreResultado (id, dados) {
-            const texto = dados
+            const texto = JSON.parse(dados)
             document.getElementById(id).innerHTML = texto
         }
 
