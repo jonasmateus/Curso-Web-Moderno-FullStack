@@ -15,7 +15,7 @@
 
     <script>
         function mostreResultado (id, dados) {
-            const texto = JSON.parse(dados)
+            const texto = JSON.stringify(dados)
             document.getElementById(id).innerHTML = texto
         }
 
@@ -30,6 +30,6 @@
         axios.post("/formulario", {
             nome: "Marcos",
             sobreNome: "Dantas"
-        }).then(resp => mostreResultado("post", resp.data))
+        }).then(resp => mostreResultado("post",resp.data))
     </script>
 </body>

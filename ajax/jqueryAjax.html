@@ -19,7 +19,7 @@
             const texto = JSON.stringify(dados)
             document.getElementById(id).innerHTML = texto
         }
-        
+
         $.ajax({
             url: "/parOuImpar",
             data: {
@@ -39,6 +39,9 @@
             }, 
             success(dados){
                 mostreResultado("post", dados)
+            },
+            error(e) {
+                mostreResultado("post", e)
             }
         })
     </script>

@@ -25,6 +25,22 @@
     </nav>
     <div class="pagina"></div>
     <script>
-        // ...
+        function navegarViaAjax(url, seletorDestino) {
+            if(!url || !seletorDestino) return
+            const elemento = document.querySelector(seletorDestino)
+            fetch(url).then( resp => resp.text() ).then( conteudo => {
+                elemento.innerHTML = conteudo
+            })
+        }
+
+        document.querySelectorAll("[wm-link]").forEach(link => {
+            const url = link.attributes["wm-link"].value
+            const seletorDestino = link.attributes["wm-destino"].value
+
+            link.onclick = (evento) => {
+                evento.preventDefault()
+                navegarViaAjax(url, seletorDestino)
+            }
+        })
     </script>
 </body>
