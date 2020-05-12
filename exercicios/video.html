@@ -1,0 +1,80 @@
+<h1 id="texto">
+    
+</h1>
+
+<h2 class="tempo">
+
+</h2>
+
+<video id="meuVideo" width="400" height="300"   controlsList="nodownload">
+
+    <source src="http://files.cod3r.com.br/curso-web/video.mp4" type="video/mp4">
+        O seu browser não suporta o formato de vídeo!!
+
+</video>
+
+<div class="progresso">
+        <div class="barraInterna"></div>
+</div>
+
+<div >
+    <button >Player</button>
+    <button >Pause</button>
+</div>
+
+<style>
+    .progresso{
+
+        height: 15px;
+        width: 400px;
+        border: solid blue 1px;
+        margin: 10px;
+       
+    }
+    .progresso > div {
+
+        background-color: brown;
+        height: 100%;
+        width: 0%;
+
+    }
+</style>
+
+
+<script>
+
+    function controlarVideo (id) {
+        
+        let video = document.getElementById(`${id}`) /*Pego a tag qualquer <video></video> pelo id dela*/
+        let botoes = document.getElementsByTagName("button") /*Pego os botões das tags <button></button>, o retorno desse método é uma arrey com com cada botão */
+       
+        /*Configuro o primeiro botão para "play", monitorando-o através de um click*/
+        botoes[0].onclick = () => {
+        video.play() 
+
+    }
+        /*Configuro o segundo botão para "pause", monitorando-o através de um click*/
+        botoes[1].onclick = () => {
+        video.pause()
+        
+    }
+
+    /*Função responsável por simular o carregamento da barra de progresso, a cada meio segundo*/
+    setInterval(() => {
+
+        let porcentagem = (video.currentTime/video.duration)*100 /*Pego o tempo atual do vídeo e divido pela duração dele*/
+        let barra = document.querySelector("div > .barraInterna") /*Pego a barra de progresso interna à tag <div></div>*/
+        barra.style.width = `${porcentagem}%` /*Incremento o tamanho da barra */
+        barra.innerHTML = `${porcentagem.toFixed()}%` /*Mostro esse progresso em porcentagem sem casas decimais*/
+
+      }, 500)
+
+    }
+
+    /*Invoco a função de configuração de um vídeo, passando o "id" como parâmetro*/
+    controlarVideo("meuVideo")
+
+</script>
+
+
+

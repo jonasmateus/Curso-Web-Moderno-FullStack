@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>CSS Selectors</title>
+    <link rel="stylesheet" href="css/tag.css">
+    <style>
+        /* #nomeClasse (seleciona uma class e )*/
+
+        /* div > p (seleciona um elemento "p" com relação direta com o elemento "div" */
+
+        /* div p (seleciona todos os  elementos "p" com relação  com o elemento "div") */
+
+        /* p + ul , "sibling", (seleciona o elemento "ul" adjacente ao elemento "p") */
+
+        /* p ~ ol , "general sibling", seleciona algum elemeto "ol" indireto ao elemento "p" */
+
+        /* [feira], (seleciona todos os elementos com atributo chamado feira) */
+
+        /* [feira=empresa], (seleciona todos os elementos com atributo chamado feira e valor empresa) */
+
+        /* [feira~=empresa], 
+        (seleciona todos os elementos com atributo chamado feira e valor "empresa" seguido de algo) */
+
+        /* [feira*=asa], (seleciona todos os elementos com atributo chamado feira e 
+        que o valor dele tenha "asa" em sua composição)*/
+
+        /* section > :nth-child(1), (seleciona o primeiro filho da section ) */
+
+        /* section > :nth-child(odd), (seleciona os filhos ímpares de detro da section) */
+
+        /* section > :nth-child(even), (seleciona os filhos pares de detro da section) */
+
+        /* section > span:nth-child(2), (seleciona o segundo elemento do tipo span detro da section)*/
+        
+        section > span:nth-child(2){
+
+            color: yellow;
+            background-color: lightcoral;
+        }
+    </style>
+</head>
+
+<body>
+    <div class='tag'>
+        <div class='tag'>
+            <p class='tag'>1</p>
+            <ul class='tag' feira='casa'>
+                <li>Arroz</li>
+                <li>Feijão</li>
+            </ul>
+            <ul class='tag' feira='escritorio empresa'>
+                <li>Café</li>
+                <li>Água</li>
+            </ul>
+            <ol id='aprovados' class='tag'>
+                <li>Maria</li>
+                <li>Pedro</li>
+                <li>Ana</li>
+            </ol>
+            <div id='aninhado' class='tag'>
+                <div class="tag">
+                    <section class='tag'>
+                        <span class='tag'>1</span>
+                        <p class='tag'>2</p>
+                        <span class='tag'>3</span>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/tag.js"></script>
+</body>
+
+</html>
