@@ -1,0 +1,45 @@
+    <!DOCTYPE html>
+    <html>
+
+    <head>
+        <meta charset="UTF-8">
+        <title>Flexbox #03</title>
+        <link rel="stylesheet" href="css/tag.css">
+        <style>
+        
+
+            div {
+                border: solid 2px blue;
+                margin: 5px;
+            }
+
+            .flex-container {
+                display: flex;
+                flex-direction: row;
+            }
+
+            .flex-container > div {
+                flex-basis: 100px;
+                width: 200px; /*vai perder*/
+            }
+
+            .flex-container :nth-child(2) {
+                /* Grow, shrink e basis*/
+                flex: 2 0 30px
+            }
+
+            
+        </style>
+    </head>
+
+    <body>
+        <div class="flex-container">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+        </div>
+        <script src="js/tag.js"></script>
+    </body>
+
+    </html>
