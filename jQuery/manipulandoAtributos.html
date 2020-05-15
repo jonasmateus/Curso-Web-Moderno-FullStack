@@ -22,7 +22,56 @@
 <body class='conteudo exercicio'>
     <h1>Manipulando Atributos</h1>
     <div wm-relogio='1000'></div>
+    <div wm-relogio='1000'></div>
     <script>
-        // ...
+        
+        function Relogio (elemento) {
+
+            const horaCerta = $("<p>").html("0")
+            const butaoMenos = $("<button>").html("-")
+            const butaoMais = $("<button>").html("+")
+            
+            const $elemento = $(elemento)
+            $elemento.append(horaCerta, butaoMenos, butaoMais)
+
+            const intervaloAtual = () => parseInt($elemento.attr("wm-relogio"))
+            
+
+             let temporizador = null
+
+             const iniciar = () => {
+
+                if ( temporizador ) clearInterval( temporizador )
+
+                temporizador = setInterval(() => {
+                
+                const data = new Date()
+                const hora =  ` ${data.getHours()} : ${data.getMinutes()} : ${data.getSeconds()} `
+                
+                horaCerta.html( hora )
+                } , intervaloAtual() )
+
+            }
+
+            const alterarIntervalo = (valor) => {
+
+                const novoValor = Math.max(intervaloAtual() + valor, 1000)
+
+                $elemento.attr("wm-relogio", novoValor)
+                iniciar()
+
+            }
+
+            butaoMenos.click( (e) => alterarIntervalo(1000))
+            butaoMais.click( (e) => alterarIntervalo(-1000))
+
+            iniciar()
+
+        }
+
+        
+
+        $("[wm-relogio]").each((i, e) => new Relogio(e))
+
     </script>
 </body>
