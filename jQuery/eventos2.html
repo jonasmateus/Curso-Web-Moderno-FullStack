@@ -21,6 +21,35 @@
     <input type="text" placeholder="Digite e Selecione">
     <div id="resultado2">?</div>
     <script>
-        // ...
+        
+        const alternarDestaque = () => { $('#div1').toggleClass('destaque') }
+
+        // $('#div').on('mouseenter mouseleave', alternarDestaque)
+        $('#div1').hover(alternarDestaque)
+
+        // $('#div1').on('mouseover', () => alert('Opa! Você passou sobre mim...'))
+
+        $('#div1').dblclick( event => {
+            
+            $('#div1').fadeOut(1000).fadeIn(1000)
+        })
+
+        $(window).resize( event => {
+
+            const windowWidth = $(window).width()
+            const windowHeight = $(window).height()
+
+            $('#resultado1').html(`Largura: ${windowWidth}, Altura: ${windowHeight}`)
+        })
+
+        $(':input').select( event => {
+
+            const selectedTextBegin = event.target.selectionStart
+            const selectedTextEnd = event.target.selectionEnd
+            const selectedText = event.target.value.substring(selectedTextBegin, selectedTextEnd)
+
+            $('#resultado2').html(selectedText)
+
+        })
     </script>
 </body>

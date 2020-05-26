@@ -20,6 +20,55 @@
     <input type="text" placeholder="Cor de Background">
 
     <script>
-        // ...
+        
+        function mostrarPosicaoMouse (event) {
+
+            $('#posicao').html(`X: ${event.clientX}, ${event.clientY}`)
+
+        }
+
+        // $('body').on('mousemove', mostrarPosicaoMouse)
+
+        $('body').mousemove(mostrarPosicaoMouse)
+
+        $('#posicao').mousemove( event => {
+
+            $('body').off('mousemove', mostrarPosicaoMouse)
+
+        })
+
+        $('#posicao').mouseleave( event => {
+
+            $('body').mousemove(mostrarPosicaoMouse)
+
+        })
+
+        let cliques = 0
+
+        $('body').click( event => {
+
+            $('#cliques').html(`Cliques: ${++cliques}`)
+
+        })
+
+        const backgroundOriginal = $('body').css('background-color')
+
+        // Tenho que usar a palavra 'function' para que 'this' seja o elemento que dispara o evento
+        $('input').keyup( function (event) {
+
+            const novoBackgorundColor = $(this).val()
+            
+            if ( novoBackgorundColor.match(/#[\da-fA-F]{3,6}/) ) {
+                
+                $('body').css('background-color', novoBackgorundColor)
+            }
+                else {
+                    $('body').css('background-color', backgroundColor)
+                }
+
+        })
+
+
+
     </script>
 </body>
