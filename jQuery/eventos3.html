@@ -26,6 +26,38 @@
     <span id='resultado'></span>
 
     <script>
-        // ...
+        
+        function showEventDatas (event) {
+
+            $('#resultado').empty()
+            const div1 = $('<div>')
+            const div2 = $('<div>')
+
+            $('#resultado').append(div1, div2)
+            div1.append(`Target: ${event.target.id}`)
+
+            const rt = event.relatedTarget ? event.relatedTarget.tagName : null
+
+            div1.append(`<br> Related Target: ${rt}`)
+            div1.append(`<br> Event type: ${event.type}`)
+            div1.append(`<br> Which: ${event.which}`)
+
+            // div2.append(`PageX: ${event.pageX}`)
+            // div2.append(`<br> PageY: ${event.pageY}`)
+            div2.append(`ClientX: ${event.clientX}`)
+            div2.append(`<br> ClientY: ${event.clientY}`)
+            div2.append(`<br> OwnX: ${event.offsetX}`)
+            div2.append(`<br> OwnY: ${event.offsetY}`)
+
+            const note = event.data ? event.data.note : null
+            div2.append(`<br> Note: ${note}`)
+
+        }
+
+        $('#div1, #div2').on('mouseenter mouseleave',
+            { note: 'Deu certo!'},  showEventDatas)
+
+        $('input').keyup(showEventDatas)
+
     </script>
 </body>
