@@ -9,17 +9,17 @@
     <style>
         body {
             position: relative;
-            background-color: #999;
+            background-color:#0D262D;
             color: #000;
         }
 
         div {
             position: absolute;
             display: inline;
-            border: solid 10px #000;
+            border: solid 5px gold;
             padding: 50px;
             font-size: 3em;
-            background-color: crimson;
+            background-color:lightgray;
         }
     </style>
 </head>
@@ -28,6 +28,45 @@
     <div>Animar!</div>
 
     <script>
-        // ...
+
+        function changeWidth (value, timeRange) {
+
+            $('div').animate({ width: `+=${value}`}, timeRange)
+
+            return new Promise(function ( resolve, reject ) {
+               
+                    resolve(value, timeRange)
+                
+            })
+
+        }
+
+        function diagonalMotion (value, timeRange) {
+
+            $('div').animate({
+                top: `+=${value}`,
+                left: `+=${value}`
+            })
+
+        }
+
+        function spinMotion(value, timeRange) {
+
+            $('div').animate({ transform: `+=${value}`}, {
+
+                step: function (value) {
+                    $(this).css('transform', `rotate(${value}deg)`)
+                },
+
+                duration: timeRange
+
+            }, 'linear')
+
+        }
+
+         changeWidth(300, 100).then(() => changeWidth(-300, 'slow')).then( () => diagonalMotion(300, 6000))
+         .then(() => spinMotion(720, 500))
+        
+
     </script>
 </body>

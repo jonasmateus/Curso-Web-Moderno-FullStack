@@ -23,6 +23,21 @@
     <div id='animar'>Animar!</div>
 
     <script>        
-        // ...
+        
+        $('button').click( event => {
+
+            const timeRange = 500
+
+            $('#animar').hide(timeRange).show(timeRange)
+            // $('#animar').toggle(timeRange).toggle(timeRange)
+
+            $('#animar').fadeOut(timeRange).fadeIn(timeRange)
+            // $('#animar').fadeToggle(timeRange).fadeToggle(timeRange)
+            
+            $('#animar').slideUp(timeRange).slideDown(timeRange)
+            // $('#animar').slideToggle(timeRange).slideToggle(timeRange)
+
+        })
+
     </script>
 </body>
